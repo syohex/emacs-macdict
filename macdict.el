@@ -59,6 +59,20 @@
 
 (defvar macdict--searched-word-history '())
 
+(defun macdict--restore-window-configuration ()
+  (interactive)
+  (jump-to-register :macdict))
+
+(defvar macdict--mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "q") 'quit-window)
+    map))
+
+(define-derived-mode macdict--mode nil "macdict"
+  ""
+  (setq buffer-read-only t)
+  (use-local-map macdict--mode-map))
+
 (defun macdict--common (lang)
   (let* ((cursor-word (thing-at-point 'word))
          (cursor-word-no-prop (and cursor-word
@@ -76,7 +90,7 @@
       (goto-char (point-min))
       (highlight-phrase (format "\\<%s\\>" (regexp-quote searched-word)))
       (pop-to-buffer (current-buffer))
-      (setq buffer-read-only t))))
+      (macdict--mode))))
 
 ;;;###autoload
 (defun macdict ()
