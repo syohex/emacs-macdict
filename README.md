@@ -47,14 +47,6 @@ Search from German dictionary
 
 Search from French dictionary
 
-#### `macdict-apple`
-
-Search from Apple dictionary
-
-#### `macdict-wikipedia`
-
-Search from Wikipedia dictionary
-
 
 ## Customization
 

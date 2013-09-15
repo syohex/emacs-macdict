@@ -108,15 +108,15 @@
   (interactive)
   (macdict--common 'french))
 
-;;;###autoload
-(defun macdict-apple ()
-  (interactive)
-  (macdict--common 'french))
-
-;;;###autoload
-(defun macdict-wikipedia ()
-  (interactive)
-  (macdict--common 'wikipedia))
+;;;;;###autoload
+;;(defun macdict-apple ()
+;;  (interactive)
+;;  (macdict--common 'french))
+;;
+;;;;;###autoload
+;;(defun macdict-wikipedia ()
+;;  (interactive)
+;;  (macdict--common 'wikipedia))
 
 (provide 'macdict)
 
