@@ -53,7 +53,7 @@ Search from French dictionary
 #### `macdict-default-lang`(Default is `'japanse-english`)
 
 Default dictionary language. You can choose it from `'japanese`, `'englush`,
-`'japanese-english`, `'thesaurus`, `'french`, `'german`, `'apple`, `'wikipedia`.
+`'japanese-english`, `'thesaurus`, `'french`, `'german`.
 
 #### `macdict-program`(Default is `dict`)
 
