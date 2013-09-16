@@ -63,16 +63,6 @@
   (interactive)
   (jump-to-register :macdict))
 
-(defvar macdict--mode-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "q") 'quit-window)
-    map))
-
-(define-derived-mode macdict--mode nil "macdict"
-  ""
-  (setq buffer-read-only t)
-  (use-local-map macdict--mode-map))
-
 (defun macdict--common (lang)
   (let* ((cursor-word (thing-at-point 'word))
          (cursor-word-no-prop (and cursor-word
@@ -89,8 +79,8 @@
         (error "Failed: '%s'" cmd))
       (goto-char (point-min))
       (highlight-phrase (format "\\<%s\\>" (regexp-quote searched-word)))
-      (pop-to-buffer (current-buffer))
-      (macdict--mode))))
+      (view-mode t)
+      (display-buffer (current-buffer) t))))
 
 ;;;###autoload
 (defun macdict ()
